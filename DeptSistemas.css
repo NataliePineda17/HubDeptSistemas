@@ -1,143 +1,138 @@
-html {
-    font-family: sans-serif;
+5
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;500;700;800;900;1000&display=swap");
+
+* {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
   }
   
-  *, *:before, *:after {
-    box-sizing: inherit;
+  body{
+    background-color: rgb(20, 20, 20);
+    padding: 0px 50px;
   }
   
-  .text-center {
+ .container{
+    padding: 50px 0px;
+    height: 100vh;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .parent{
+    height: 400px;
+    width: 300px;
+    padding: 20px;
+    perspective: 1000px;
+  }
+  
+  .card{
+    padding-top: 100px;
+    transform-style: preserve-3d;
+    background-image: url("https://images.pexels.com/photos/1629236/pexels-photo-1629236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-position: center center;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  .card:hover{
+    background-position: 80% 20%;
+    transform: rotate3d(0.5, 1, 0, 30deg);
+  }
+  
+  .content-box{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.811);
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: rgba(0, 115, 255, 0.925) 0px 20px 50px -25px;
+    transition: all 0.5s ease-in-out;
+    padding: 50px 25px 25px 25px;
+    transform-style: preserve-3d;
+  }
+  
+  .card-title{
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 20px);
+  }
+  
+  .card-title:hover {
+    transform: translate3d(0px, 0px, 50px);
+  }
+  
+  .card-content{
+    padding-top: 15px;
+    font-size: 12px;
+    color: rgb(185, 185, 185);
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 20px);
+  }
+  
+  .card-content:hover{
+    transform: translate3d(0px, 0px, 50px);
+  }
+  
+  .see-more{
+    display: block;
+    font-weight: 900;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: rgb(0, 136, 255);
+    padding-top: 15px;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 20px);
+  }
+  
+  .see-more:hover{
+    transform: translate3d(0px, 0px, 50px);
+  }
+  
+  .date-box{
+    position: absolute;
+    top: 75px;
+    left: 25px;
+    height: 60px;
+    width: 60px;
+    background-color: black;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: rgb(0, 102, 255) 0px 20px 60px 0px, rgb(0, 200, 255) 0px 18px 36px -18px;
+    transform: translate3d(0px, 0px, 50px);
+  }
+  
+  .date-box span{
+    display: block;
     text-align: center;
   }
   
-  .color-white {
-    color: #fff;
+  .date-box .month{
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
   }
   
-  .box-container {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 35px 15px;
-    width: 100%;
+  .date-box .date{
+    font-size: 19px;
+    font-weight: 900;
+    color: rgb(0, 136, 255);
   }
-  
-  @media screen and (min-width:1380px) {
-    .box-container {
-      flex-direction: row
-    }
+
+  .card2{
+    filter: hue-rotate(150deg);
   }
-  
-  .box-item {
-    position: relative;
-    -webkit-backface-visibility: hidden;
-    width: 415px;
-    margin-bottom: 35px;
-    max-width: 100%;
+
+  .card3{
+    filter: hue-rotate(300deg);
   }
-  
-  .flip-box {
-    -ms-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    perspective: 1000px;
-    -webkit-perspective: 1000px;
-  }
-  
-  .flip-box-front,
-  .flip-box-back {
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    min-height: 475px;
-    -ms-transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
-    transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
-    -webkit-transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  
-  .flip-box-front {
-    -ms-transform: rotateY(0deg);
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-    -webkit-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-  
-  .flip-box:hover .flip-box-front {
-    -ms-transform: rotateY(-180deg);
-    -webkit-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
-    -webkit-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-  
-  .flip-box-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    
-    -ms-transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-    -webkit-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-  
-  .flip-box:hover .flip-box-back {
-    -ms-transform: rotateY(0deg);
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-    -webkit-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-  
-  .flip-box .inner {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    padding: 60px;
-    outline: 1px solid transparent;
-    -webkit-perspective: inherit;
-    perspective: inherit;
-    z-index: 2;
-    
-    transform: translateY(-50%) translateZ(60px) scale(.94);
-    -webkit-transform: translateY(-50%) translateZ(60px) scale(.94);
-    -ms-transform: translateY(-50%) translateZ(60px) scale(.94);
-    top: 50%;
-  }
-  
-  .flip-box-header {
-    font-size: 34px;
-  }
-  
-  .flip-box p {
-    font-size: 20px;
-    line-height: 1.5em;
-  }
-  
-  .flip-box-img {
-    margin-top: 25px;
-  }
-  
-  .flip-box-button {
-    background-color: transparent;
-    border: 2px solid #fff;
-    border-radius: 2px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 25px;
-    padding: 15px 20px;
-    text-transform: uppercase;
+
+  .card4{
+    filter: hue-rotate(90deg);
   }
