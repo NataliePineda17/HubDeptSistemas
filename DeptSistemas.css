@@ -42,7 +42,7 @@
   
   .card:hover{
     background-position: 80% 20%;
-    transform: rotate3d(0.5, 1, 0, 30deg);
+    transform: rotate3d(0, 1, 0, 180deg);
   }
   
   .content-box{
