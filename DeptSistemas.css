@@ -9,7 +9,7 @@
   }
   
   body{
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(15, 15, 15);
     padding: 0px 50px;
   }
   
@@ -136,3 +136,5 @@
   .card4{
     filter: hue-rotate(90deg);
   }
+  .card:hover
+  
